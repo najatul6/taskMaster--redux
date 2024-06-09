@@ -9,9 +9,10 @@ import {
 
 const Sidebar = () => {
   return (
-    <div className="h-screen sticky top-0 border-r-2 border-secondary/20">
+    <div className=" h-screen sticky top-0 border-r-2 border-secondary/20">
       <div className="flex flex-col items-center gap-5 h-full py-5">
-        <img src={logo} alt="logo" />
+       <img src={logo} alt="logo" />
+       
         <NavLink
           to="/"
           className={({ isActive }) =>

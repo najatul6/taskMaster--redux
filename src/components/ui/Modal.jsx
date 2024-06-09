@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import {
   Button,
   Dialog,
@@ -58,4 +59,8 @@ export default function Modal({ isOpen, setIsOpen }) {
       </Transition>
     </>
   );
+}
+Modal.propTypes= {
+  isOpen: PropTypes.node,
+  setIsOpen: PropTypes.node,
 }

@@ -3,9 +3,15 @@ import Modal from "../ui/Modal";
 import { useForm } from "react-hook-form";
 
 const AddTaskModal = ({ isOpen, setIsOpen }) => {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
+
+  const onCancel = () => {
+    reset();
+    setIsOpen(false);
+  };
   const onSubmit = (data) => {
     console.log(data);
+    onCancel()
   };
   return (
     <Modal isOpen={isOpen} setIsOpen={setIsOpen} title="Add Task">
@@ -61,7 +67,7 @@ const AddTaskModal = ({ isOpen, setIsOpen }) => {
             id="assignedTo"
             {...register("assignedTo")}
           >
-            <option defaultValue disabled value="select">
+            <option selected disabled value="select">
               Select
             </option>
             <option defaultValue value="Md Najatul Islam">
@@ -88,7 +94,7 @@ const AddTaskModal = ({ isOpen, setIsOpen }) => {
             id="priority"
             {...register("priority")}
           >
-            <option defaultValue disabled value="select">
+            <option selected disabled value="select">
               Select
             </option>
             <option value="high">High</option>
@@ -99,7 +105,7 @@ const AddTaskModal = ({ isOpen, setIsOpen }) => {
 
         {/* Buttons */}
         <div className="flex gap-3 justify-end">
-          <button type="button" className="btn btn-danger">
+          <button onClick={()=>onCancel()} type="button" className="btn btn-danger">
             Cancel
           </button>
           <button type="submit" className="btn btn-primary">

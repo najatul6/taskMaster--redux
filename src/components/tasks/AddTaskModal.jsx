@@ -1,4 +1,4 @@
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import Modal from "../ui/Modal";
 import { useForm } from "react-hook-form";
 
@@ -119,7 +119,7 @@ const AddTaskModal = ({ isOpen, setIsOpen }) => {
 
 export default AddTaskModal;
 
-// AddTaskModal.propTypes = {
-//   isOpen: PropTypes.node,
-//   setIsOpen: PropTypes.node,
-// };
+AddTaskModal.propTypes = {
+  isOpen: PropTypes.node,
+  setIsOpen: PropTypes.node,
+};

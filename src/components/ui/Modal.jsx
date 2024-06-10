@@ -8,7 +8,7 @@ import {
   TransitionChild,
 } from "@headlessui/react";
 
-export default function Modal({ isOpen, setIsOpen }) {
+export default function Modal({ isOpen, setIsOpen,title,children }) {
   function close() {
     setIsOpen(false);
   }
@@ -37,12 +37,9 @@ export default function Modal({ isOpen, setIsOpen }) {
                     as="h3"
                     className="text-base/7 font-medium text-white"
                   >
-                    Payment successful
+                    {title}
                   </DialogTitle>
-                  <p className="mt-2 text-sm/6 text-white/50">
-                    Your payment has been successfully submitted. We’ve sent you
-                    an email with all of the details of your order.
-                  </p>
+                  {children}
                   <div className="mt-4">
                     <Button
                       className="inline-flex items-center gap-2 rounded-md bg-gray-700 py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-600 data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white"

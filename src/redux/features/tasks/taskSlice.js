@@ -12,6 +12,7 @@ const taskSlice = createSlice({
         state.tasks.push({id:1,...payload})
         }else{
           const lastElement = state.tasks.at(-1)
+          state.tasks.push({id:lastElement.id + 1,...payload})
         }
     }
   },
